@@ -67,13 +67,13 @@ public class UiFrame extends JFrame implements ActionListener, KeyListener
         walls[0].setBounds(0, 0, 500, 25);
 
         walls[1] = new JLabel();
-        walls[1].setBounds(0, 0, 25, 500);
+        walls[1].setBounds(0, 0, 25, 475);
 
         walls[2] = new JLabel();
         walls[2].setBounds(0, 450, 500, 25);
 
         walls[3] = new JLabel();
-        walls[3].setBounds(475, 0, 25, 500);
+        walls[3].setBounds(475, 0, 25, 475);
 
         for(int i = 0; i < 4; i++)
         {
