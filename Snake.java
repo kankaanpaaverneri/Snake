@@ -25,11 +25,7 @@ public class Snake
         Point point = new Point(0, 0);
         for(int i = 0; i < this.getSnakeLength(); i++)
         {
-            SnakePart snakePart;
-            if(i == 0)
-                snakePart = new SnakePart(point, Color.DARK_GRAY);
-            else
-                snakePart = new SnakePart(point);
+            SnakePart snakePart = new SnakePart(point);
 
             this.snake.add(snakePart);
             point.setLocation(snakePart.getPointX() + 25, snakePart.getPointY());
