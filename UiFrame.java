@@ -17,7 +17,6 @@ public class UiFrame extends JFrame implements ActionListener, KeyListener
     private JLabel highScoreLabel;
     private int highScore = 0;
     Audio slurpSound, bigFruitCatchSound;
-    Audio nokiaTune;
 
     public UiFrame()
     {
@@ -26,9 +25,6 @@ public class UiFrame extends JFrame implements ActionListener, KeyListener
         {
             this.slurpSound = new Audio("slurp_sfx.wav");
             this.bigFruitCatchSound = new Audio("ai_etta_mita_luksusta_sfx.wav");
-            this.nokiaTune = new Audio("GranVals.wav");
-            this.nokiaTune.getClip().setMicrosecondPosition(0);
-            this.nokiaTune.getClip().start();
         }
 
         catch(Exception e)
@@ -135,7 +131,7 @@ public class UiFrame extends JFrame implements ActionListener, KeyListener
             return true;
         else if(snake.getSnakePart(0).getX() >= 475)
             return true;
-        
+
         return false;
     }
 
@@ -195,10 +191,10 @@ public class UiFrame extends JFrame implements ActionListener, KeyListener
                                 null,
                                 response,
                                 0);
-        
+
         System.exit(0);
-        
-        
+
+
     }
 
     @Override
@@ -208,11 +204,11 @@ public class UiFrame extends JFrame implements ActionListener, KeyListener
         //Wall collision detection
         if(this.wallCollision() == true)
             this.gameOver();
-        
+
         //Tail collision detection
         if(this.tailCollision() == true)
             this.gameOver();
-        
+
         //Fruit collision
         if(this.fruitCollision() == true)
         {
@@ -271,7 +267,7 @@ public class UiFrame extends JFrame implements ActionListener, KeyListener
         //Move head to the new position
         snake.getSnakePart(0).setLocation(snake.getSnakePart(0).getX() + xDirection,
             snake.getSnakePart(0).getY() + yDirection);
-        
+
         //Make the tail follow
         snake.getSnakePart(snakeIterator).setLocation(headPreviousLocation);
         snakeIterator++;
@@ -286,28 +282,28 @@ public class UiFrame extends JFrame implements ActionListener, KeyListener
                 //Left
                 if(this.getXDirection() != 25) //Prevents from moving to opposite direction
                     this.setXDirection(-25);
-                
+
                 this.setYDirection(0);
                 break;
             case 38:
                 //Up
                 if(this.getYDirection() != 25) //Prevents from moving to opposite direction
                     this.setYDirection(-25);
-                
+
                 this.setXDirection(0);
                 break;
             case 39:
                 //Right
                 if(this.getXDirection() != -25) //Prevents from moving to opposite direction
                     this.setXDirection(25);
-                
+
                 this.setYDirection(0);
                 break;
             case 40:
                 //Down
                 if(this.getYDirection() != -25) //Prevents from moving to opposite direction
                     this.setYDirection(25);
-                
+
                 this.setXDirection(0);
                 break;
             default:
